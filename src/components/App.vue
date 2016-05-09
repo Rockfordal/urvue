@@ -1,38 +1,32 @@
 <template>
   <div>
-    <vs-navbar fixed="top" variant="default">
-        <a class="navbar-brand" v-link="{ path: '/' }">UrVue</a>
-        <vs-nav type="navbar" :vertical="false" class="pull-left">
-          <vs-nav-item link="projects">Projekt</vs-nav-item>
-          <vs-nav-item link="people">Personer</vs-nav-item>
-          <form class="form-inline navbar-form pull-right">
-            <input class="form-control" type="text" placeholder="Sök..">
-            <button class="btn btn-success-outline" type="submit">Sök</button>
-          </form>
-        </vs-nav>
-    </vs-navbar>
+    <nav>
+    <div class="nav-wrapper">
+      <a v-link="'/'" class="brand-logo">VUEZORMATERIALIZORZ</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li v-bind:class="{ 'active': true }"><a v-link="'projects'" >Project</a></li>
+        <li><a v-link="'people'">Perzonzorz</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li v-bind:class="{ 'active': true }"><a v-link="'projects'" >Project</a></li>
+        <li><a v-link="'people'">Perzonzorz</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
     <router-view></router-view>
+  </div>
   </div>
 </template>
 <script>
-import vuestrapBase from 'vuestrap-base-components'
+// import vuestrapBase from 'vuestrap-base-components'
 
 // r = require('rethinkdb');
 // import rethinkdb as r
 // let connection = null;
 
 export default {
-  components: {
-    'vs-modal': vuestrapBase.modal,
-    'vs-card': vuestrapBase.card,
-    'vs-btn': vuestrapBase.buttons,
-    'vs-alert': vuestrapBase.alert,
-    'vs-badge': vuestrapBase.badge,
-    'vs-progress': vuestrapBase.progress,
-    'vs-navbar': vuestrapBase.navbar,
-    'vs-nav': vuestrapBase.nav,
-    'vs-nav-item': vuestrapBase.navItem
-  },
   data () {
     return {
       showLoginModal: false,

@@ -2,40 +2,34 @@
   <div>
   <h1>Projekt</h1>
 
-    <vs-table hover responsive>
-      <table>
+
+      <table class="table">
         <thead>
           <tr>
             <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>Förnamn</th>
+            <th>Efternamn</th>
+            <th>Användarnamn</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="project in projects">
             <th scope="row">{{project.id}}</th>
-            <td>{{project.name}}</td>
-            <td></td>
-            <td></td>
+            <td>{{project.firstname}}</td>
+            <td>{{project.lastname}}</td>
+            <td>{{project.username}}</td>
           </tr>
         </tbody>
       </table>
-    </vs-table>
 
-    <button v-on:click="getProjects" class="btn btn-default btn-success">Spara</button>
+    <button v-on:click="getProjects" class="btn btn-default blue">Spara</button>
   </div>
 </template>
 
 <script>
-import vuestrapBase from 'vuestrap-base-components'
 import $ from 'jquery'
 
 export default {
-  components: {
-    'vs-btn': vuestrapBase.buttons,
-    'vs-table': vuestrapBase.tables
-  },
   data () {
     return {
       projects: []
@@ -50,11 +44,11 @@ export default {
         url: 'http://localhost:4000/graphql/',
         crossDomain: true,
         data: {
-          query: '{ authors { id name } }'
+          query: '{ projects { id firstname lastname username } }'
         }
       }).done(response => {
         console.log(response.data)
-        this.projects = response.data.authors
+        this.projects = response.data.projects
       })
     }
   }
