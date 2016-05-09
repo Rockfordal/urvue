@@ -2,10 +2,6 @@
   <div>
   <h1>Projekt</h1>
 
-    <!-- <li v-for="project in projects">
-        {{ project.name }}
-    </li> -->
-
     <vs-table hover responsive>
       <table>
         <thead>
@@ -18,7 +14,7 @@
         </thead>
         <tbody>
           <tr v-for="project in projects">
-            <th scope="row">1</th>
+            <th scope="row">{{project.id}}</th>
             <td>{{project.name}}</td>
             <td></td>
             <td></td>
@@ -42,9 +38,7 @@ export default {
   },
   data () {
     return {
-      projects: [{id: 1, name: 'Ica'},
-                 {id: 2, name: 'Coop Forum'},
-                 {id: 3, name: 'Claes Ohlsson'}]
+      projects: []
     }
   },
   created: function () {
@@ -59,6 +53,7 @@ export default {
           query: '{ authors { id name } }'
         }
       }).done(response => {
+        console.log(response.data)
         this.projects = response.data.authors
       })
     }
