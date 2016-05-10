@@ -5,12 +5,13 @@
       <a v-link="'/'" class="brand-logo">UrVue</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li v-bind:class="{ 'active': true }"><a v-link="'projects'" >Project</a></li>
-        <li><a v-link="'people'">Personer</a></li>
+        <li v-bind:class="{ 'active': true }"><a v-link="'projects'" >Projekt</a></li>
+        <li v-bind:class="{ 'active': true }"><a v-link="'people'" >Personer</a></li>
+        <!-- <li><a v-link="'people'">Personer</a></li> -->
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li v-bind:class="{ 'active': true }"><a v-link="'projects'" >Project</a></li>
-        <li><a v-link="'people'">Personer</a></li>
+        <li v-bind:class="{ 'active': true }"><a v-link="'projects'" >Projekt</a></li>
+        <li v-bind:class="{ 'active': true }"><a v-link="'people'" >Personer</a></li>
       </ul>
     </div>
   </nav>
@@ -19,8 +20,8 @@
   </div>
   </div>
 </template>
-<script>
 
+<script>
 export default {
   data () {
     return {

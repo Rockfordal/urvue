@@ -1,12 +1,8 @@
 import Vue from 'vue'
 import Home from './components/Home'
 import Projects from './components/Projects'
+import People from './components/People'
 import NotFound from './components/NotFound'
-
-const People = Vue.extend({
-  template: 'Look at all the people who work here!'
-  // <!-- <li><a v-link="{ name: 'showperson', params: { personId: 5 }}">Person 5</a></li> -->
-})
 
 const Person = Vue.extend({
   template: 'Person ID is {{$route.params.personId}}'

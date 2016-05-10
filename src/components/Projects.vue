@@ -5,18 +5,12 @@
     <table class="table">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Förnamn</th>
-          <th>Efternamn</th>
-          <th>Användarnamn</th>
+          <th>Namn</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="project in projects">
-          <th scope="row">{{project.id}}</th>
-          <td>{{project.firstname}}</td>
-          <td>{{project.lastname}}</td>
-          <td>{{project.username}}</td>
+          <td>{{project.name}}</td>
         </tr>
       </tbody>
     </table>
@@ -43,7 +37,7 @@ export default {
         url: 'http://localhost:4000/graphql/',
         crossDomain: true,
         data: {
-          query: '{ projects { id firstname lastname username } }'
+          query: '{ projects { id name } }'
         }
       }).done(response => {
         console.log(response.data)
