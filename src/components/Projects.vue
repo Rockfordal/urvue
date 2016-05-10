@@ -2,25 +2,24 @@
   <div>
   <h1>Projekt</h1>
 
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Förnamn</th>
-            <th>Efternamn</th>
-            <th>Användarnamn</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="project in projects">
-            <th scope="row">{{project.id}}</th>
-            <td>{{project.firstname}}</td>
-            <td>{{project.lastname}}</td>
-            <td>{{project.username}}</td>
-          </tr>
-        </tbody>
-      </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Förnamn</th>
+          <th>Efternamn</th>
+          <th>Användarnamn</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="project in projects">
+          <th scope="row">{{project.id}}</th>
+          <td>{{project.firstname}}</td>
+          <td>{{project.lastname}}</td>
+          <td>{{project.username}}</td>
+        </tr>
+      </tbody>
+    </table>
 
     <button v-on:click="getProjects" class="btn btn-default blue">Spara</button>
   </div>
