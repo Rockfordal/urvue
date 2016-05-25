@@ -5,13 +5,14 @@
       <a v-link="'/'" class="brand-logo">UrVue</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li v-bind:class="{ 'active': true }"><a v-link="'projects'" >Projekt</a></li>
-        <li v-bind:class="{ 'active': true }"><a v-link="'people'" >Personer</a></li>
-        <!-- <li><a v-link="'people'">Personer</a></li> -->
+        <li v-bind:class="{ 'active': true }"><a v-link="{path: '/projects'}" >Projekt</a></li>
+        <li v-bind:class="{ 'active': true }"><a v-link="{path: '/people'}" >Personer</a></li>
+        <li v-bind:class="{ 'active': true }"><a v-link="{path: '/counter'}" >Räknare</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li v-bind:class="{ 'active': true }"><a v-link="'projects'" >Projekt</a></li>
-        <li v-bind:class="{ 'active': true }"><a v-link="'people'" >Personer</a></li>
+        <li v-bind:class="{ 'active': true }"><a v-link="{path: '/projects'}" >Projekt</a></li>
+        <li v-bind:class="{ 'active': true }"><a v-link="{path: '/people'}" >Personer</a></li>
+        <li v-bind:class="{ 'active': true }"><a v-link="{path: '/counter'}" >Räknare</a></li>
       </ul>
     </div>
   </nav>
@@ -22,7 +23,9 @@
 </template>
 
 <script>
+import store from './vuex/store'
 export default {
+  store,
   data () {
     return {
       showLoginModal: false,
